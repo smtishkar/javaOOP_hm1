@@ -1,7 +1,6 @@
 package units;
 public abstract class BaseHero {
     protected String name;              
-    // protected int heroID;
     protected int hp;
     protected int atack;
 
@@ -17,5 +16,17 @@ public abstract class BaseHero {
         this.name, this.getClass().getSimpleName(), this.hp, this.atack);
     }
 
+    public void GetDamage(int damage) {
+        if (this.hp - damage > 0) {
+            this.hp -= damage;
+        } else {
+            System.out.println("Персонаж умер");
+        }
+    }
+
+    public void Attack(BaseHero target) {
+        int damage = this.atack;
+        target.GetDamage(damage);
+    }
 
 }
