@@ -10,14 +10,18 @@ public class Warriors extends BaseHero{
         this.stamina = stamina;
         //TODO Auto-generated constructor stub
     }
-    
-    // public String getInfo() {
-    //     return String.format("Name: %s  Hp: %d Atack: %d Stamina:%d",
-    //             this.name, this.hp, this.atack, this.stamina, this.getClass().getSimpleName());
-    // }
+
 
     public String getInfo() {
         return String.format("%s stamina: %d", super.getInfo(), this.stamina);
     }
+
+    /**
+     * Метод описывает снижение запаса сил после удара;
+     * @param stamina
+     */
+    // public void stamina(int stamina) {
+    
+        // }
 
 }

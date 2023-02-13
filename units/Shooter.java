@@ -9,13 +9,20 @@ public class Shooter extends BaseHero{
         this.ammocount = ammocount;
         //TODO Auto-generated constructor stub
     }
-    // public String getInfo() {
-    //     return String.format("Name: %s  Hp: %d Atack: %d ammocount:%d",
-    //             this.name, this.hp, this.atack, this.ammocount, this.getClass().getSimpleName());
-    // }
+
 
     public String getInfo() {
         return String.format("%s ammocount: %d", super.getInfo(), this.ammocount);
     }
+
+
+    /**
+    * Метод описывает логику снижение количества стрел после выстрела;
+    * @param ammocount
+    */
+    // public void ammocountReduction(int ammocount) {
+    
+    // }
+    
 
 }
