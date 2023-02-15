@@ -2,9 +2,15 @@ package units;
 
 public class Monk extends Magician{
 
-    public Monk(int hp, int maxHp, int atack, int def, int mp,int maxMp) {
-        super(hp, maxHp, atack, def, mp, maxMp);
-        //TODO Auto-generated constructor stub
+    public Monk(String name) {
+        super(120, 170, 0, 40, 150, 300, name);
     }
     
+
+    @Override
+    public String toString(){
+        // return super.toString();            
+        return "Монах " + name;
+    }
+
 }

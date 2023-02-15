@@ -20,12 +20,21 @@ public class program {
     public static void main(String[] args) {
 
 
-        Sniper sniper1 = new Sniper("Ivan");
         ArrayList<BaseHero> list = new ArrayList<>();
         list.add(new Sniper("Sergey"));
         list.add(new Crossbowman("Petr"));
+        list.add(new Monk("Petr"));
+        list.add(new Wizard("Petr"));
+        list.add(new Raider("Petr"));
+        list.add(new Peasant("Petr"));
+        list.add(new Spearman("Petr"));
 
-        list.forEach(n-> System.out.println(n.toString()));
+
+        // Sniper sniper1 = new Sniper("rjkkff");
+
+        // System.out.println(sniper1);                // Если есть в классе override - тогда можно выводить на экран информацию таким способом
+
+        list.forEach(n-> System.out.println(n));
 
 
         // BaseHero hero1 = new Monk("Сергей", 100, 5, 70);

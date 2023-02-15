@@ -13,9 +13,9 @@ public abstract class Shooter extends BaseHero{
     }
 
 
-    public String getInfo() {
-        return String.format("%s ammocount: %d", super.getInfo(), this.arrows);
-    }
+    // public String getInfo() {
+    //     return String.format("%s ammocount: %d", super.getInfo(), this.arrows);
+    // }
 
 
     /**

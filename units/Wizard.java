@@ -4,10 +4,14 @@ package units;
 
 public class Wizard extends Magician{
 
-    public Wizard(int hp, int maxHp, int atack, int def, int mp,int maxMp) {
-        super(hp, maxHp, atack, def, mp, maxMp);
-        //TODO Auto-generated constructor stub
+    public Wizard(String name) {
+        super(100, 150, 0, 50, 200, 500, name);
     }
     
+    @Override
+    public String toString(){
+        // return super.toString();            
+        return "Волшебник " + name;
+    }
     
 }
