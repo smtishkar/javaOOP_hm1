@@ -2,7 +2,7 @@ package units;
 
 public abstract class Magician extends BaseHero{
 
-    private int mp, maxMp;
+    protected int mp, maxMp;
 
     public Magician(int hp, int maxHp, int atack, int def, int mp2, int maxMp2) {
         super(hp, maxHp, atack, def);

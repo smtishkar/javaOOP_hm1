@@ -2,9 +2,20 @@ package units;
 
 public class Crossbowman extends Shooter{
 
-    public Crossbowman(int hp, int maxHp, int atack, int def, int arrows, int maxArrows) {
-        super(hp, maxHp, atack, def, arrows, maxArrows);
-        //TODO Auto-generated constructor stub
+    public Crossbowman(String name) {
+        super(150, 200, 300, 400, 3, 5, name);
     }
     
+    // public Crossbowman(String name, int hp) {                   // Можно сделать более гибкий конструктор, добавив еще переменную
+    //     super(hp, 200, 300, 400, 3, 5, name);
+    // }
+
+    @Override
+    public String toString(){
+        // return super.toString();            //Будет возвращать строеку которая формируется в супер классе
+        return "Арбалетчик " + name;
+    }
+
 }
+
+

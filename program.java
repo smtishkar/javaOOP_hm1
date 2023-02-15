@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import units.BaseHero;
 import units.Crossbowman;
 import units.Magician;
@@ -18,9 +20,13 @@ public class program {
     public static void main(String[] args) {
 
 
-        Monk monk1 = new Monk(10, 10, 10, 10, 10, 10);
-        System.out.println(monk1);
-        // System.out.println(monk1.getInfo());
+        Sniper sniper1 = new Sniper("Ivan");
+        ArrayList<BaseHero> list = new ArrayList<>();
+        list.add(new Sniper("Sergey"));
+        list.add(new Crossbowman("Petr"));
+
+        list.forEach(n-> System.out.println(n.toString()));
+
 
         // BaseHero hero1 = new Monk("Сергей", 100, 5, 70);
         // System.out.println(((Magician) hero1).getInfo());
