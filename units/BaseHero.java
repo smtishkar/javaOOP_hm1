@@ -1,19 +1,20 @@
 package units;
 public abstract class BaseHero {
-    protected String name;              
-    protected int hp;
-    protected int atack;
+            
+    protected int hp, atack, def, maxHp;
+  
 
 
-    public BaseHero(String name, int hp, int atack){
-        this.name = name;
+    public BaseHero(int hp, int maxHp, int atack, int def){
         this.hp = hp;
         this.atack = atack;
+        this.def = def;
+        this.maxHp = maxHp;
     }
 
     public String getInfo() {
         return String.format("Name: %s; Type: %s;  Hp: %d;  Atack: %d; ",
-        this.name, this.getClass().getSimpleName(), this.hp, this.atack);
+        this.getClass().getSimpleName(), this.hp, this.atack);
     }
 
     public void GetDamage(int damage) {

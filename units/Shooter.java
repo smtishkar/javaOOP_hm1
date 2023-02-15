@@ -1,18 +1,19 @@
 package units;
 
-public class Shooter extends BaseHero{
+public abstract class Shooter extends BaseHero{
 
-    private int ammocount;
+    private int arrows, maxArrows;
 
-    public Shooter(String name, int hp, int atack, int ammocount) {
-        super(name, hp, atack);
-        this.ammocount = ammocount;
+    public Shooter(int hp, int maxHp, int atack, int def, int arrows2, int maxArrows2) {
+        super(hp, maxHp, atack, def);
+        this.arrows = arrows;
+        this.maxArrows = maxArrows;
         //TODO Auto-generated constructor stub
     }
 
 
     public String getInfo() {
-        return String.format("%s ammocount: %d", super.getInfo(), this.ammocount);
+        return String.format("%s ammocount: %d", super.getInfo(), this.arrows);
     }
 
 

@@ -1,10 +1,13 @@
 package units;
 
+import java.lang.reflect.Constructor;
+
 public class Wizard extends Magician{
 
-    public Wizard(String name, int hp, int atack, int mp) {
-        super(name, hp, atack, mp);
+    public Wizard(int hp, int maxHp, int atack, int def, int mp,int maxMp) {
+        super(hp, maxHp, atack, def, mp, maxMp);
         //TODO Auto-generated constructor stub
     }
+    
     
 }

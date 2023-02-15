@@ -1,13 +1,14 @@
 package units;
 
-public class Warriors extends BaseHero{
+public abstract class Warriors extends BaseHero{
 
-    private int stamina;
+    private int stamina, maxStamina;
 
 
-    public Warriors(String name, int hp, int atack, int stamina) {
-        super(name, hp, atack);
+    public Warriors(int hp, int maxHp, int atack, int def, int stamina2, int maxStamina2) {
+        super(hp, maxHp, atack, def);
         this.stamina = stamina;
+        this.maxStamina = maxStamina;
         //TODO Auto-generated constructor stub
     }
 

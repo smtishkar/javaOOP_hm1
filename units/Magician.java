@@ -1,12 +1,13 @@
 package units;
 
-public class Magician extends BaseHero{
+public abstract class Magician extends BaseHero{
 
-    private int mp;
+    private int mp, maxMp;
 
-    public Magician(String name, int hp, int atack, int mp) {
-        super(name, hp, atack);
+    public Magician(int hp, int maxHp, int atack, int def, int mp2, int maxMp2) {
+        super(hp, maxHp, atack, def);
         this.mp = mp;
+        this.maxMp = maxMp;
     }
 
     public String getInfo() {
