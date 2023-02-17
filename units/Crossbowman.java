@@ -15,7 +15,7 @@ public class Crossbowman extends Shooter{
     @Override
     public String getInfo(){
         // return super.toString();            //Будет возвращать строеку которая формируется в супер классе
-        return "Арбалетчик" + name;
+        return "Арбалетчик " + name;
     }
 
 

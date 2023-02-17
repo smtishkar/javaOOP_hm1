@@ -1,15 +1,14 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 import units.BaseHero;
 import units.Crossbowman;
-import units.Magician;
+import units.InGameInterface;
 import units.Monk;
 import units.Peasant;
 import units.Raider;
-import units.Shooter;
 import units.Sniper;
 import units.Spearman;
-import units.Warriors;
 import units.Wizard;
 
 /**
@@ -19,41 +18,50 @@ public class program {
 
     public static void main(String[] args) {
 
+        int maxteamlenght = 10;
+        ArrayList<BaseHero> team = new ArrayList<>();
+        for (int i = 0; i < maxteamlenght; i++) {
 
-        ArrayList<BaseHero> list = new ArrayList<>();
-        list.add(new Sniper("Sergey"));
-        list.add(new Crossbowman("Petr"));
-        list.add(new Monk("Petr"));
-        list.add(new Wizard("Petr"));
-        list.add(new Raider("Petr"));
-        list.add(new Peasant("Petr"));
-        list.add(new Spearman("Petr"));
-        
+            switch (new Random().nextInt(0, 6)) {
+                case 0:
+                    team.add(new Sniper(getName()));
+                    break;
 
+                case 1:
+                    team.add(new Crossbowman(getName()));
+                    break;
 
-        // Sniper sniper1 = new Sniper("Ваня");
+                case 2:
+                    team.add(new Monk(getName()));
+                    break;
 
-        // System.out.println(sniper1);                // Если есть в классе override - тогда можно выводить на экран информацию таким способом
+                case 3:
+                    team.add(new Wizard(getName()));
+                    break;
 
-        list.forEach(n-> System.out.println(n));
+                case 4:
+                    team.add(new Raider(getName()));
+                    break;
 
+                case 5:
+                    team.add(new Peasant(getName()));
+                    break;
 
-        // BaseHero hero1 = new Monk("Сергей", 100, 5, 70);
-        // System.out.println(((Magician) hero1).getInfo());
+                case 6:
+                    team.add(new Spearman(getName()));
+                    break;
+            }
+        }
 
-        System.out.println("--------------------------------------------");
-        System.out.println("Let's play");
+        team.forEach(n -> System.out.println(n.getInfo()));
+        System.out.println(team.get(1).getInfo());          // Вывод одного элемента массива
+    }
 
+    
+    private static String getName() {
 
-        // hero1.Attack(hero7);
-        // System.out.println(((Magician) hero7).getInfo());
-        // hero2.Attack(hero4);
-        // System.out.println(((Warriors) hero4).getInfo());
-        // hero2.Attack(hero4);
-        // System.out.println(((Warriors) hero4).getInfo());
-        // hero2.Attack(hero4);
-        // System.out.println(((Warriors) hero4).getInfo());
-        // hero2.Attack(hero4);
+        return String.valueOf(Names.values()[new Random().nextInt(Names.values().length)]);
 
     }
+
 }
