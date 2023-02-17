@@ -54,7 +54,7 @@ public class program {
         }
 
         team.forEach(n -> System.out.println(n.getInfo()));
-        System.out.println(team.get(1).getInfo());          // Вывод одного элемента массива
+        // System.out.println(team.get(1).getInfo());          // Вывод одного элемента массива
     }
 
     
