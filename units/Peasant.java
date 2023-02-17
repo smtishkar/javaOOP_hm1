@@ -8,7 +8,7 @@ public class Peasant extends Warriors {
     }
 
     @Override
-    public String toString(){
+    public String getInfo(){
         // return super.toString();            
         return "Крестьянин " + name;
     }

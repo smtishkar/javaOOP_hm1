@@ -7,10 +7,9 @@ public class Monk extends Magician{
     }
     
 
+
     @Override
-    public String toString(){
-        // return super.toString();            
+    public String getInfo(){
         return "Монах " + name;
     }
-
 }

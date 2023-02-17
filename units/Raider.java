@@ -7,8 +7,7 @@ public class Raider extends Warriors {
      }
  
      @Override
-     public String toString(){
-         // return super.toString();            
+     public String getInfo(){         
          return "Разбойник " + name;
      }
 

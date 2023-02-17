@@ -12,10 +12,13 @@ public class Sniper extends Shooter{
 
     }
     
+
     @Override
-    public String toString(){
+    public String getInfo(){
         // return super.toString();            //Будет возвращать строеку которая формируется в супер классе
         return "Снайпер " + name;
     }
+
+
 
 }

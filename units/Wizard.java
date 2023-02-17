@@ -9,8 +9,7 @@ public class Wizard extends Magician{
     }
     
     @Override
-    public String toString(){
-        // return super.toString();            
+    public String getInfo(){          
         return "Волшебник " + name;
     }
     

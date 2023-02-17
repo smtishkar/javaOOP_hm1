@@ -10,11 +10,14 @@ public class Crossbowman extends Shooter{
     //     super(hp, 200, 300, 400, 3, 5, name);
     // }
 
+
+
     @Override
-    public String toString(){
+    public String getInfo(){
         // return super.toString();            //Будет возвращать строеку которая формируется в супер классе
-        return "Арбалетчик " + name;
+        return "Арбалетчик" + name;
     }
+
 
 }
 

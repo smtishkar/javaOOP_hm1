@@ -6,8 +6,7 @@ public class Spearman extends Warriors{
         super(500, 700, 200, 250, 100, 150, name);
     }
     @Override
-    public String toString(){
-        // return super.toString();            
+    public String getInfo(){           
         return "Копейщик " + name;
     }
 }

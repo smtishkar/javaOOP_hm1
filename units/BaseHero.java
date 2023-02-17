@@ -1,5 +1,5 @@
 package units;
-public abstract class BaseHero {
+public abstract class BaseHero implements InGameInterface {
             
     protected int hp, atack, def, maxHp;
   
@@ -12,10 +12,10 @@ public abstract class BaseHero {
         this.maxHp = maxHp;
     }
 
-    public String getInfo() {
-        return String.format("Name: %s; Type: %s;  Hp: %d;  Atack: %d; ",
-        this.getClass().getSimpleName(), this.hp, this.atack);
-    }
+    // public String getInfo() {
+    //     return String.format("Name: %s; Type: %s;  Hp: %d;  Atack: %d; ",
+    //     this.getClass().getSimpleName(), this.hp, this.atack);
+    // }
 
     public void GetDamage(int damage) {
         if (this.hp - damage > 0) {
@@ -28,6 +28,17 @@ public abstract class BaseHero {
     public void Attack(BaseHero target) {
         int damage = this.atack;
         target.GetDamage(damage);
+    }
+
+
+    @Override
+    public void step() {
+        
+    }
+
+    @Override
+    public String getInfo(){return "null";
+
     }
 
 }
