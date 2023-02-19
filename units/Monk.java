@@ -3,7 +3,7 @@ package units;
 public class Monk extends Magician{
 
     public Monk(String name) {
-        super(120, 170, 0, 40, 150, 300, name);
+        super(30, 30, 12, 7, -4, 5, 1, 1, name);
     }
     
 

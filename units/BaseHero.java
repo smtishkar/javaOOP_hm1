@@ -1,15 +1,17 @@
 package units;
 public abstract class BaseHero implements InGameInterface {
             
-    protected int hp, atack, def, maxHp;
+    protected int hp, atack, def, maxHp, dam, speed;
   
 
 
-    public BaseHero(int hp, int maxHp, int atack, int def){
+    public BaseHero(int hp, int maxHp, int atack, int def, int dam, int speed){
         this.hp = hp;
         this.atack = atack;
         this.def = def;
         this.maxHp = maxHp;
+        this.dam = dam;
+        this.speed = speed;
     }
 
     // public String getInfo() {

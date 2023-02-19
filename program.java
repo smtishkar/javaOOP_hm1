@@ -44,7 +44,7 @@ public class program {
                     break;
 
                 case 5:
-                    team.add(new Peasant(getName()));
+                    team.add(new Peasant(getName(), 1));
                     break;
 
                 case 6:

@@ -5,7 +5,7 @@ package units;
 public class Wizard extends Magician{
 
     public Wizard(String name) {
-        super(100, 150, 0, 50, 200, 500, name);
+        super(30, 30, 17, 12, -5, 9, 1, 1, name);
     }
     
     @Override

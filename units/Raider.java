@@ -3,7 +3,7 @@ package units;
 public class Raider extends Warriors {
 
     public Raider(String name) {
-        super(200, 250, 20, 50, 50, 150, name);
+        super(10, 10, 8, 3, 4, 6, 50, 150, name);
      }
  
      @Override

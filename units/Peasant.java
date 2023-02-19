@@ -1,8 +1,12 @@
 package units;
 
 public class Peasant extends Warriors {
-    public Peasant(String name) {
-        super(200, 250, 20, 50, 50, 150, name);
+
+    protected int delivery;
+
+    public Peasant(String name, int delivery) {
+        super(1, 1, 1, 1, 1, 3, 50, 150, name);
+        this.delivery = delivery;
 
         
     }

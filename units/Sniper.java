@@ -5,7 +5,7 @@ public class Sniper extends Shooter{
     
 
     public Sniper(String name) {
-        super(100, 150, 200, 300, 5, 10, name);
+        super(15, 15, 12, 10, 10, 9, 32, 32, name);
 
     // public Sniper(int hp, int maxHp, int atack, int def, int arrows, int maxArrows) {
     //     super(hp, maxHp, atack, def, arrows, maxArrows);
