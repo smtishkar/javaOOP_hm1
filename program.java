@@ -1,3 +1,4 @@
+import java.net.SocketTimeoutException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -20,40 +21,56 @@ public class program {
 
         int maxteamlenght = 10;
         ArrayList<BaseHero> team = new ArrayList<>();
+        ArrayList<BaseHero> team2 = new ArrayList<>();
         for (int i = 0; i < maxteamlenght; i++) {
 
-            switch (new Random().nextInt(0, 6)) {
+            switch (new Random().nextInt(0, 3)) {
                 case 0:
                     team.add(new Sniper(getName()));
                     break;
 
                 case 1:
-                    team.add(new Crossbowman(getName()));
-                    break;
-
-                case 2:
-                    team.add(new Monk(getName()));
-                    break;
-
-                case 3:
                     team.add(new Wizard(getName()));
                     break;
 
-                case 4:
+                case 2:
                     team.add(new Raider(getName()));
                     break;
 
-                case 5:
+                case 3:
                     team.add(new Peasant(getName(), 1));
                     break;
 
-                case 6:
-                    team.add(new Spearman(getName()));
+            }
+        }
+
+        for (int i = 0; i < maxteamlenght; i++) {
+
+            switch (new Random().nextInt(0, 3)) {
+
+                case 0:
+                    team2.add(new Crossbowman(getName()));
+                    break;
+
+                case 1:
+                    team2.add(new Monk(getName()));
+                    break;
+
+                case 2:
+                    team2.add(new Peasant(getName(), 1));
+                    break;
+
+                case 3:
+                    team2.add(new Spearman(getName()));
                     break;
             }
         }
 
+        System.out.println("Команда 1");
         team.forEach(n -> System.out.println(n.getInfo()));
+        System.out.println("-------------------------------");
+        System.out.println("Команда 2");
+        team2.forEach(n -> System.out.println(n.getInfo()));
         // System.out.println(team.get(1).getInfo());          // Вывод одного элемента массива
     }
 
