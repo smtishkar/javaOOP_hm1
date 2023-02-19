@@ -6,5 +6,6 @@ public interface InGameInterface {
 
     String getInfo();
     
+    int getSpeed();
 
 }

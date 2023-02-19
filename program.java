@@ -1,5 +1,6 @@
 import java.net.SocketTimeoutException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Random;
 
 import units.BaseHero;
@@ -24,7 +25,7 @@ public class program {
         ArrayList<BaseHero> team2 = new ArrayList<>();
         for (int i = 0; i < maxteamlenght; i++) {
 
-            switch (new Random().nextInt(0, 3)) {
+            switch (new Random().nextInt(0, 4)) {
                 case 0:
                     team.add(new Sniper(getName()));
                     break;
@@ -46,7 +47,7 @@ public class program {
 
         for (int i = 0; i < maxteamlenght; i++) {
 
-            switch (new Random().nextInt(0, 3)) {
+            switch (new Random().nextInt(0, 4)) {
 
                 case 0:
                     team2.add(new Crossbowman(getName()));
@@ -66,12 +67,39 @@ public class program {
             }
         }
 
-        System.out.println("Команда 1");
-        team.forEach(n -> System.out.println(n.getInfo()));
-        System.out.println("-------------------------------");
-        System.out.println("Команда 2");
-        team2.forEach(n -> System.out.println(n.getInfo()));
+        // System.out.println("Команда 1");
+        // team.forEach(n -> System.out.println(n.getInfo()));
+        // System.out.println("-------------------------------");
+        // System.out.println("Команда 2");
+        // team2.forEach(n -> System.out.println(n.getInfo()));
         // System.out.println(team.get(1).getInfo());          // Вывод одного элемента массива
+
+        team.sort(new Comparator<BaseHero>(){
+
+            @Override
+            public int compare(BaseHero o1, BaseHero o2) {
+            return o2.getSpeed() - o1.getSpeed();         
+            }
+        });
+
+
+        team2.sort(new Comparator<BaseHero>(){
+
+            @Override
+            public int compare(BaseHero o1, BaseHero o2) {
+            return o2.getSpeed() - o1.getSpeed();         
+            }
+        });
+
+
+        System.out.println("Команда 1");
+        System.out.println();
+        team.forEach(n -> System.out.println(n.getInfo()));
+        System.out.println("Команд 2");
+        System.out.println();
+        team2.forEach(n -> System.out.println(n.getInfo()));
+
+
     }
 
     

@@ -10,6 +10,12 @@ public class Monk extends Magician{
 
     @Override
     public String getInfo(){
-        return "Монах " + name;
+        return "Монах " + name + "; "+ "Скорость " + speed;
     }
+
+    @Override
+    public int getSpeed(){
+        return speed;
+    }
+
 }

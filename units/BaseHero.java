@@ -41,4 +41,6 @@ public abstract class BaseHero implements InGameInterface {
     @Override
     public String getInfo(){return "null";}
 
+    
+
 }

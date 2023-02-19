@@ -7,6 +7,11 @@ public class Spearman extends Warriors{
     }
     @Override
     public String getInfo(){           
-        return "Копейщик " + name;
+        return "Копейщик " + name + "; "+ "Скорость " + speed;
+    }
+
+    @Override
+    public int getSpeed(){
+        return speed;
     }
 }
