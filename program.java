@@ -74,27 +74,49 @@ public class program {
         // team2.forEach(n -> System.out.println(n.getInfo()));
         // System.out.println(team.get(1).getInfo());          // Вывод одного элемента массива
 
+        // team.sort(new Comparator<BaseHero>(){
+
+        //     @Override
+        //     public int compare(BaseHero o1, BaseHero o2) {
+        //     return o2.getSpeed() - o1.getSpeed();         
+        //     }
+        // });
+
+
+
+
+
+        // team2.sort(new Comparator<BaseHero>(){
+
+        //     @Override
+        //     public int compare(BaseHero o1, BaseHero o2) {
+        //     return o2.getSpeed() - o1.getSpeed();         
+        //     }
+        // });
+
+        
         team.sort(new Comparator<BaseHero>(){
 
             @Override
             public int compare(BaseHero o1, BaseHero o2) {
-            return o2.getSpeed() - o1.getSpeed();         
+            if(o2.getSpeed() == o1.getSpeed()) return o2.getAtack() - o1.getAtack();
+            return o2.getSpeed() - o1.getSpeed();    
             }
         });
-
 
         team2.sort(new Comparator<BaseHero>(){
 
             @Override
             public int compare(BaseHero o1, BaseHero o2) {
-            return o2.getSpeed() - o1.getSpeed();         
+            if(o2.getSpeed() == o1.getSpeed()) return o2.getAtack() - o1.getAtack();
+            return o2.getSpeed() - o1.getSpeed();    
             }
         });
-
 
         System.out.println("Команда 1");
         System.out.println();
         team.forEach(n -> System.out.println(n.getInfo()));
+        System.out.println("--------------------------");
         System.out.println("Команд 2");
         System.out.println();
         team2.forEach(n -> System.out.println(n.getInfo()));

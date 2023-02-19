@@ -8,11 +8,15 @@ public class Raider extends Warriors {
  
      @Override
      public String getInfo(){         
-         return "Разбойник " + name + "; "+ "Скорость " + speed;
+         return "Разбойник " + name + "; "+ "Скорость " + speed + "; "+ "Атака " + atack;
      }
 
      @Override
      public int getSpeed(){
          return speed;
+     }
+     @Override
+     public int getAtack(){
+         return atack;
      }
 }

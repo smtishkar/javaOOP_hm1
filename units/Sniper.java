@@ -16,12 +16,16 @@ public class Sniper extends Shooter{
     @Override
     public String getInfo(){
         // return super.toString();            //Будет возвращать строеку которая формируется в супер классе
-        return "Снайпер " + name + "; "+ "Скорость " + speed;
+        return "Снайпер " + name + "; "+ "Скорость " + speed + "; "+ "Атака " + atack;
     }
 
     @Override
     public int getSpeed(){
         return speed;
+    }
+    @Override
+    public int getAtack(){
+        return atack;
     }
 
 

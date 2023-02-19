@@ -10,11 +10,15 @@ public class Wizard extends Magician{
     
     @Override
     public String getInfo(){          
-        return "Волшебник " + name + "; "+ "Скорость " + speed;
+        return "Волшебник " + name + "; "+ "Скорость " + speed + "; "+ "Атака " + atack;
     }
     
     @Override
     public int getSpeed(){
         return speed;
+    }
+    @Override
+    public int getAtack(){
+        return atack;
     }
 }

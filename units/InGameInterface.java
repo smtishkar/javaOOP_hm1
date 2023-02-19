@@ -8,4 +8,6 @@ public interface InGameInterface {
     
     int getSpeed();
 
+    int getAtack();
+
 }
