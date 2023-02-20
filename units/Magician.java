@@ -12,22 +12,4 @@ public abstract class Magician extends BaseHero{
         this.name = name;
     }
 
-
-
-
-    
-    // public String getInfo() {
-    //     return String.format("%s mp: %d", super.getInfo(), this.mp);
-    // }
-
-    /**
-    * Метод описывает логику снижение манны после удара
-    * @param mp
-    */
-    // public void mpReduction(int mp) {
-    
-    // }
-
-
-
 }

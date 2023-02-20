@@ -12,8 +12,7 @@ public class Peasant extends Warriors {
     }
 
     @Override
-    public String getInfo(){
-        // return super.toString();            
+    public String getInfo(){         
         return "Крестьянин " + name + "; "+ "Скорость " + speed + "; "+ "Атака " + atack;
     }
 

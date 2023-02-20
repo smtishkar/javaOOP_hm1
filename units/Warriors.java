@@ -13,19 +13,4 @@ public abstract class Warriors extends BaseHero{
         this.name = name;
     }
 
-
-
-    
-    // public String getInfo() {
-    //     return String.format("%s stamina: %d", super.getInfo(), this.stamina);
-    // }
-
-    /**
-     * Метод описывает снижение запаса сил после удара;
-     * @param stamina
-     */
-    // public void stamina(int stamina) {
-    
-        // }
-
 }
