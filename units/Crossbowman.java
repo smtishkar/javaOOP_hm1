@@ -6,7 +6,7 @@ public class Crossbowman extends Shooter{
 
 
     public Crossbowman(String name, Vector2D coords) {
-        super(10, 10, 6, 5, 3, 4, 16, 16, name, coords.posX, coords.posY);
+        super(10, 10, 6, 5, 3, 4, 0, 0, name, coords.posX, coords.posY, 2);
     }
     
     // public Crossbowman(String name, int hp) {                   // Можно сделать более гибкий конструктор, добавив еще переменную
@@ -19,7 +19,7 @@ public class Crossbowman extends Shooter{
     public String getInfo(){
         return "Арбалетчик " + name + "    |     Speed:" + speed + 
         "    |     Atack: " + atack + "    |     HP: " + hp + "    |     "
-         + coords.posX  + "    "+   coords.posY; 
+         + coords.posX  + "    "+   coords.posY + "    |     Arrows:" + arrows; 
     
     }
 

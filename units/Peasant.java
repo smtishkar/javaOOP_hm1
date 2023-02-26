@@ -5,7 +5,7 @@ public class Peasant extends Warriors {
     protected int ammo;
 
     public Peasant(String name, Vector2D coords) {
-        super(1, 1, 1, 1, 1, 3, 50, 150, name, coords.posX, coords.posY );
+        super(1, 1, 1, 1, 1, 3, 50, 150, name, coords.posX, coords.posY,1 );
         this.ammo = 1;
 
         
@@ -13,7 +13,6 @@ public class Peasant extends Warriors {
 
     @Override
     public String getInfo(){         
-        // return "Крестьянин " + name + "; "+ "Скорость " + speed + "; "+ "Атака " + atack;
         return "Крестьянин " + name + "    |     Speed:" + speed + 
         "    |     Atack: " + atack + "    |     HP: " + hp + "    |     "
          + coords.posX  + "    "+   coords.posY; 

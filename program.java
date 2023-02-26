@@ -3,6 +3,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Random;
+import java.util.Scanner;
 
 import units.BaseHero;
 import units.Crossbowman;
@@ -25,6 +26,7 @@ public class program {
     public static void main(String[] args) {
 
         // int maxteamlenght = 10;
+        Scanner user_input = new Scanner(System.in);
         ArrayList<BaseHero> team1 = new ArrayList<>();
         ArrayList<BaseHero> team2 = new ArrayList<>();
         ArrayList<BaseHero> allmembers = new ArrayList<>();
@@ -42,6 +44,20 @@ public class program {
         System.out.println();
         System.out.println("Все участники");
         allmembers.forEach(n -> System.out.println(n.getInfo()));
+        System.out.println();
+
+
+        String stop = "";
+        while (stop.equals("")) {
+            for (BaseHero human : allmembers) {
+                if (team1.contains(human))
+                    human.step(team1, team2);
+                else
+                    human.step(team2, team1);
+            }
+            allmembers.forEach(n-> System.out.println(n.getInfo()));
+            stop = user_input.nextLine();
+        }
 
     }
 
@@ -85,8 +101,10 @@ public class program {
 
             @Override
             public int compare(BaseHero o1, BaseHero o2) {
-                if (o2.getSpeed() == o1.getSpeed()) return o2.getHp() - o1.getHp();
-                else return o2.getSpeed() - o1.getSpeed();
+                if (o2.getSpeed() == o1.getSpeed())
+                    return o2.getHp() - o1.getHp();
+                else
+                    return o2.getSpeed() - o1.getSpeed();
             }
         });
     }

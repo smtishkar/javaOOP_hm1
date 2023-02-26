@@ -3,7 +3,7 @@ package units;
 public class Raider extends Warriors {
 
     public Raider(String name, Vector2D coords) {
-        super(10, 10, 8, 3, 4, 6, 50, 150, name, coords.posX, coords.posY);
+        super(10, 10, 8, 3, 4, 6, 50, 150, name, coords.posX, coords.posY, 2);
      }
  
      @Override
