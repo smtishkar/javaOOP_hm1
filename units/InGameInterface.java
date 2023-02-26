@@ -10,4 +10,6 @@ public interface InGameInterface {
 
     int getAtack();
 
+    int getHp();
+
 }

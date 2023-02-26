@@ -2,8 +2,8 @@ package units;
 
 public class Sniper extends Shooter {
 
-    public Sniper(String name) {
-        super(15, 15, 12, 10, 10, 9, 32, 32, name);
+    public Sniper(String name, Vector2D coords) {
+        super(15, 15, 12, 10, 10, 9, 32, 32, name, coords.posX, coords.posY);
 
     }
 
@@ -11,7 +11,10 @@ public class Sniper extends Shooter {
     public String getInfo() {
         // return super.toString(); //Будет возвращать строеку которая формируется в
         // супер классе
-        return "Снайпер " + name + "; " + "Скорость " + speed + "; " + "Атака " + atack;
+        return "Снайпер " + name + "    |     Speed:" + speed + 
+        "    |     Atack: " + atack + "    |     HP: " + hp + "    |     "
+         + coords.posX  + "    "+   coords.posY; 
+    
     }
 
     @Override
@@ -24,4 +27,8 @@ public class Sniper extends Shooter {
         return atack;
     }
 
+    @Override
+    public int getHp(){
+        return hp;
+    }
 }

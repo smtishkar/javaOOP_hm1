@@ -2,13 +2,16 @@ package units;
 
 public class Raider extends Warriors {
 
-    public Raider(String name) {
-        super(10, 10, 8, 3, 4, 6, 50, 150, name);
+    public Raider(String name, Vector2D coords) {
+        super(10, 10, 8, 3, 4, 6, 50, 150, name, coords.posX, coords.posY);
      }
  
      @Override
      public String getInfo(){         
-         return "Разбойник " + name + "; "+ "Скорость " + speed + "; "+ "Атака " + atack;
+         return "Разбойник " + name + "    |     Speed:" + speed + 
+         "    |     Atack: " + atack + "    |     HP: " + hp + "    |     "
+          + coords.posX  + "    "+   coords.posY; 
+        
      }
 
      @Override
@@ -18,5 +21,10 @@ public class Raider extends Warriors {
      @Override
      public int getAtack(){
          return atack;
+     }
+
+     @Override
+     public int getHp(){
+         return hp;
      }
 }

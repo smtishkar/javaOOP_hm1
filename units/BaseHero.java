@@ -2,16 +2,17 @@ package units;
 public abstract class BaseHero implements InGameInterface {
             
     protected int hp, atack, def, maxHp, dam, speed;
-  
+    protected Vector2D coords;
 
-
-    public BaseHero(int hp, int maxHp, int atack, int def, int dam, int speed){
+    protected BaseHero(int hp, int maxHp, int atack, int def, int dam, int speed, int posX, int posY){
         this.hp = hp;
         this.atack = atack;
         this.def = def;
         this.maxHp = maxHp;
         this.dam = dam;
         this.speed = speed;
+        coords = new Vector2D(posX, posY);
+        
     }
 
     // public String getInfo() {

@@ -6,8 +6,9 @@ public abstract class Warriors extends BaseHero{
     protected String name;
 
 
-    public Warriors(int hp, int maxHp, int atack, int def, int dam, int speed, int stamina, int maxStamina, String name) {
-        super(hp, maxHp, atack, def, dam, speed);
+    public Warriors(int hp, int maxHp, int atack, int def, int dam, int speed, 
+    int stamina, int maxStamina, String name, int posX, int posY) {
+        super(hp, maxHp, atack, def, dam, speed, posX, posY);
         this.stamina = stamina;
         this.maxStamina = maxStamina;
         this.name = name;
