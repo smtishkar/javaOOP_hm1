@@ -3,16 +3,12 @@ package units;
 public class Spearman extends Warriors{
 
     public Spearman(String name, Vector2D coords) {
-        super(10, 10, 4, 5, 3, 4, 100, 150, name, coords.posX, coords.posY, 1);
+        super(30, 30, 4, 5, 3, 4, 100, 150, name, coords.posX, coords.posY, 1);
     }
     @Override
     public String getInfo(){           
-        // return "Копейщик " + name + "    |     Speed:" + speed + 
-        // "    |     Atack: " + atack + "    |     HP: " + hp + "    |     "
-        //  + coords.posX  + "    "+   coords.posY; 
-    
 
-        return String.format("Копейщик: %12s |  Speed: %3d  |  Atack:  %3d  |  HP:  %3d  |  XY  %3d -%3d", name, speed, atack,hp, coords.posY, coords.posX);
+        return String.format("Копейщик: %12s |  Speed: %3d  |  Atack:  %3d  |  HP:  %3d  |  XY  %3d -%3d  |  State:  %5s  |  ", name, speed, atack,hp, coords.posY, coords.posX, state);
     }
 
     // @Override
