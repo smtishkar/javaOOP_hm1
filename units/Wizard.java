@@ -11,9 +11,13 @@ public class Wizard extends Magician{
     @Override
     public String getInfo(){  
        
-        return "Волшебник: " + name + "    |     Speed:" +  speed + 
-        "    |     Atack: " + atack + "    |     HP: " + hp + "    |     "
-         + coords.posX  + "    "+   coords.posY + "    |     MP:" + mp;
+        // return "Волшебник: " + name + "    |     Speed:" +  speed + 
+        // "    |     Atack: " + atack + "    |     HP: " + hp + "    |     "
+        //  + coords.posX  + "    "+   coords.posY + "    |     MP:" + mp;
+    
+        return String.format("Волшебник: %11s |  Speed: %3d  |  Atack:  %3d  |  HP:  %3d  |  XY  %3d -%3d  |  MP:  %3d", name, speed, atack,hp, coords.posY, coords.posX, mp );
+
+    
     }
     
     @Override

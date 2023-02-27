@@ -50,16 +50,20 @@ public class program {
         String stop = "";
         while (stop.equals("")) {
             for (BaseHero human : allmembers) {
-                if (team1.contains(human))
+                if (team1.contains(human)){
                     human.step(team1, team2);
-                else
+                }
+                else{
                     human.step(team2, team1);
+                }
             }
             allmembers.forEach(n-> System.out.println(n.getInfo()));
             stop = user_input.nextLine();
         }
 
     }
+
+
 
     static void createTeam(ArrayList team, int offset, int posY) {
         for (int i = 0; i < maxteamlenght; i++) {

@@ -8,10 +8,15 @@ public class Raider extends Warriors {
  
      @Override
      public String getInfo(){         
-         return "Разбойник " + name + "    |     Speed:" + speed + 
-         "    |     Atack: " + atack + "    |     HP: " + hp + "    |     "
-          + coords.posX  + "    "+   coords.posY; 
+        //  return "Разбойник " + name + "    |     Speed:" + speed + 
+        //  "    |     Atack: " + atack + "    |     HP: " + hp + "    |     "
+        //   + coords.posX  + "    "+   coords.posY; 
         
+        return String.format("Разбойник: %11s |  Speed: %3d  |  Atack:  %3d  |  HP:  %3d  |  XY  %3d -%3d", name, speed, atack,hp, coords.posY, coords.posX);
+       
+
+
+
      }
 
      @Override

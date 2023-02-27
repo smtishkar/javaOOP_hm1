@@ -26,18 +26,18 @@ public abstract class BaseHero implements InGameInterface {
     //     this.getClass().getSimpleName(), this.hp, this.atack);
     // }
 
-    public void GetDamage(int damage) {
-        if (this.hp - damage > 0) {
-            this.hp -= damage;
-        } else {
-            System.out.println("Персонаж умер");
-        }
-    }
+    // public void GetDamage(int damage) {
+    //     if (this.hp - damage > 0) {
+    //         this.hp -= damage;
+    //     } else {
+    //         System.out.println("Персонаж умер");
+    //     }
+    // }
 
-    public void Attack(BaseHero target) {
-        int damage = this.atack;
-        target.GetDamage(damage);
-    }
+    // public void Attack(BaseHero target) {
+    //     int damage = this.atack;
+    //     target.GetDamage(damage);
+    // }
 
 
     @Override
@@ -48,10 +48,11 @@ public abstract class BaseHero implements InGameInterface {
     @Override
     public String getInfo(){return "null";}
 
+    
     public void step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {}
 
-    protected int findNearest(ArrayList<BaseHero> team){
-        double min = Double.MAX_VALUE;
+    public int findNearest(ArrayList<BaseHero> team){
+        double min = 10;     //Double.MAX_VALUE;
         int index = 0;
         for (int i = 0; i < team.size(); i++) {
             if(min > coords.getDistance(team.get(i).coords)) {

@@ -17,10 +17,12 @@ public class Crossbowman extends Shooter{
 
     @Override
     public String getInfo(){
-        return "Арбалетчик " + name + "    |     Speed:" + speed + 
-        "    |     Atack: " + atack + "    |     HP: " + hp + "    |     "
-         + coords.posX  + "    "+   coords.posY + "    |     Arrows:" + arrows; 
+        // return "Арбалетчик " + name + "    |     Speed:" + speed + 
+        // "    |     Atack: " + atack + "    |     HP: " + hp + "    |     "
+        //  + coords.posX  + "    "+   coords.posY + "    |     Arrows:" + arrows; 
     
+        return String.format("Арбалетчик: %10s |  Speed: %3d  |  Atack:  %3d  |  HP:  %3d  |  XY  %3d -%3d  |  Arrows:  %3d", name, speed, atack,hp, coords.posY, coords.posX, arrows );
+
     }
 
     @Override
