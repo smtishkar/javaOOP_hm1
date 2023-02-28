@@ -15,28 +15,12 @@ public abstract class Magician extends BaseHero {
         this.name = name;
     }
 
-    // protected BaseHero findIll(ArrayList<BaseHero> team) {
-    //     double minHp = Double.MAX_VALUE;
-    //     int index = 0;
-    //     for (int i = 0; i < team.size(); i++) {
-    //         if (minHp > team.get(i).maxHp - team.get(i).hp && team.get(i).state.equals("Stand")) {
-    //             index = i;
-    //             minHp = team.get(i).maxHp - team.get(i).hp;
-    //         }
-    //     }
-    //     return team.get(index);
-    // }
-
-
-    
     protected int findIll(ArrayList<BaseHero> team) {
-        double minHp = 0;  //Double.MAX_VALUE;
+        double minHp = 0;
         int index = 0;
-        
+
         for (int i = 0; i < team.size(); i++) {
-            // int calcHP = team.get(i).maxHp - team.get(i).hp;
-            if (minHp < team.get(i).maxHp - team.get(i).hp && team.get(i).hp>0) {
-                // if (minHp > team.get(i).maxHp - team.get(i).hp && calcHP !=0) {
+            if (minHp < team.get(i).maxHp - team.get(i).hp && team.get(i).hp > 0) {
                 index = i;
                 minHp = team.get(i).maxHp - team.get(i).hp;
             }
@@ -44,21 +28,12 @@ public abstract class Magician extends BaseHero {
         return index;
     }
 
-
-
-
     @Override
     public void step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
         if (state.equals("Stand") && mp > 0) {
             BaseHero tareget = team1.get(findIll(team1));
-            // if (tareget.hp != tareget.maxHp) {
-            // if (tareget.hp != tareget.maxHp && tareget.state.equals("Stand")) {
             tareget.getDamage(damageMax);
             mp--;
-            // }else{System.out.println("Все здоровы");}
-            // Проблема в том, что лечит постоянно, даже если у всех HP - 100%
         }
-
     }
-
 }

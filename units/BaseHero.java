@@ -1,7 +1,6 @@
 package units;
 
 import java.util.ArrayList;
-import java.util.jar.Attributes.Name;
 
 public abstract class BaseHero implements InGameInterface {
 
@@ -41,7 +40,7 @@ public abstract class BaseHero implements InGameInterface {
             if (team.get(i).state.equals("Stand") && min > coords.getDistance(team.get(i).coords)) {
                 index = i;
                 min = coords.getDistance(team.get(i).coords);
-            } 
+            }
 
         }
         return index;
