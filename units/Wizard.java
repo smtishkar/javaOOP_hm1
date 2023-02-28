@@ -5,7 +5,7 @@ package units;
 public class Wizard extends Magician{
 
     public Wizard(String name, Vector2D coords) {
-        super(30, 30, 17, 12, -5, 9, 0, 10, name, coords.posX, coords.posY);
+        super(30, 30, 17, 12, -5, 2, 0, 10, name, coords.posX, coords.posY);
     }
     
     @Override
