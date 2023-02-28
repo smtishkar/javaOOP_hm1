@@ -56,7 +56,7 @@ public class program {
             }
 
 
-
+            
             allmembers.forEach(n -> System.out.println(n.getInfo()));
             stop = user_input.nextLine();
         }

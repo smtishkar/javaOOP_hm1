@@ -1,6 +1,7 @@
 package units;
 
 import java.util.ArrayList;
+import java.util.jar.Attributes.Name;
 
 public abstract class BaseHero implements InGameInterface {
             
@@ -33,14 +34,17 @@ public abstract class BaseHero implements InGameInterface {
     public void step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {}
 
     public int findNearest(ArrayList<BaseHero> team){
-        double min = 10;     //Double.MAX_VALUE;
+        double min = Double.MAX_VALUE;
         int index = 0;
         for (int i = 0; i < team.size(); i++) {
+            if (state.equals("Stand")){
             if(min > coords.getDistance(team.get(i).coords)) {
                 index = i;
                 min = coords.getDistance(team.get(i).coords);
             }
-        }
+
+        }}
+        System.out.println(speed + "    " + state);
         return index;
     }
 

@@ -34,10 +34,10 @@ public class Peasant extends Warriors {
         return hp;
     }
 
-    // @Override
-    // public void step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
-    // if (!state.equals("Die")) state = "Stand";
-    // }
+    @Override
+    public void step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
+    if (!state.equals("Die")) state = "Stand";
+    }
 
 
 }
