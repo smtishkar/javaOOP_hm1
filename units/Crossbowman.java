@@ -6,7 +6,7 @@ public class Crossbowman extends Shooter{
 
 
     public Crossbowman(String name, Vector2D coords) {
-        super(30, 30, 6, 5, 3, 4, 0, 0, name, coords.posX, coords.posY, 2);
+        super(30, 30, 6, 5, 3, 7, 0, 0, name, coords.posX, coords.posY, 2);
     }
 
     @Override
