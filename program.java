@@ -49,7 +49,6 @@ public class program {
             for (BaseHero human : allmembers) {
                 if (team1.contains(human)) {
                     human.step(team1, team2);
-
                 } else {
                     human.step(team2, team1);
                 }
