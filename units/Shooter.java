@@ -30,7 +30,7 @@ public abstract class Shooter extends BaseHero {
     @Override
     public void step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
         // if ( state.equals("Stand") && arrows > 0) {
-        if (arrows > 0) {
+        if (state.equals("Stand") && arrows > 0) {
             BaseHero tareget = team2.get(findNearest(team2));
             float damage = (tareget.def - atack) > 0 ? damageMin
                     : (tareget.def - atack) < 0 ? damageMax : (damageMin + damageMax) / 2;
