@@ -30,6 +30,8 @@ public abstract class BaseHero implements InGameInterface {
         return "null";
     }
 
+    public int[] getCoords() {return new int[]{coords.posX, coords.posY};}
+    
     public void step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
     }
 

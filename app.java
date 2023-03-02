@@ -18,16 +18,17 @@ import units.Wizard;
 /**
  * program
  */
-public class program {
+public class app {
 
     static final int maxteamlenght = 10;
+    public static ArrayList<BaseHero> team1 = new ArrayList<>();
+    public static ArrayList<BaseHero> team2 = new ArrayList<>();
+    public static ArrayList<BaseHero> allmembers = new ArrayList<>();
 
     public static void main(String[] args) {
 
         Scanner user_input = new Scanner(System.in);
-        ArrayList<BaseHero> team1 = new ArrayList<>();
-        ArrayList<BaseHero> team2 = new ArrayList<>();
-        ArrayList<BaseHero> allmembers = new ArrayList<>();
+
         createTeam(team1, 0, 1);
         createTeam(team2, 3, 10);
         allmembers.addAll(team1);
@@ -46,6 +47,7 @@ public class program {
 
         String stop = "";
         while (stop.equals("")) {
+            View.view();
             for (BaseHero human : allmembers) {
                 if (team1.contains(human)) {
                     human.step(team1, team2);
@@ -56,7 +58,7 @@ public class program {
 
 
             
-            allmembers.forEach(n -> System.out.println(n.getInfo()));
+            // allmembers.forEach(n -> System.out.println(n.getInfo()));
             stop = user_input.nextLine();
         }
 
