@@ -25,7 +25,7 @@ public abstract class Shooter extends BaseHero {
             tareget.getDamage(damage);
 
             for (BaseHero human : team1) {
-                if (human.getInfo().toString().split(":")[0].equals("Крестьянин") && human.state.equals("Stand")) {
+                if (human.getInfo().toString().split(":")[0].equals("Ферм") && human.state.equals("Stand")) {
                     human.state = "Busy";
                     return;
                 }
