@@ -17,7 +17,7 @@ public abstract class Shooter extends BaseHero {
     }
 
     @Override
-    public void step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
+    public boolean step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
         if (state.equals("Stand") && arrows > 0) {
             BaseHero tareget = team2.get(findNearest(team2));
             float damage = (tareget.def - atack) > 0 ? damageMin
@@ -27,13 +27,14 @@ public abstract class Shooter extends BaseHero {
             for (BaseHero human : team1) {
                 if (human.getInfo().toString().split(":")[0].equals("Ферм") && human.state.equals("Stand")) {
                     human.state = "Busy";
-                    return;
+                    
                 }
-
+                return true;
             }
             arrows--;
+            
         }
-
+        return false;
     }
 
 }

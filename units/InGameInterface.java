@@ -1,8 +1,10 @@
 package units;
 
+import java.util.ArrayList;
+
 public interface InGameInterface {
     
-    void step();
+    boolean step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2);
 
     String getInfo();
     

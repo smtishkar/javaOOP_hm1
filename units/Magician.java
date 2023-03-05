@@ -29,11 +29,14 @@ public abstract class Magician extends BaseHero {
     }
 
     @Override
-    public void step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
+    public boolean step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
         if (state.equals("Stand") && mp > 0) {
             BaseHero tareget = team1.get(findIll(team1));
             tareget.getDamage(damageMax);
             mp--;
+            return false;
         }
+        return true;
     }
+    
 }

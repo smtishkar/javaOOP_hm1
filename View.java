@@ -48,12 +48,12 @@ public class View {
         }
         step++;
         app.allmembers.forEach((v) -> l[0] = Math.max(l[0], v.toString().length()));
-        System.out.print("_".repeat(l[0]*2));
+        System.out.print("_".repeat(l[0]*6));
         System.out.println("");
         System.out.print(top10 + "    ");
         System.out.print("Blue side");
         //for (int i = 0; i < l[0]-9; i++)
-        System.out.print(" ".repeat(l[0]-9));
+        System.out.print("    ".repeat(l[0]-9));
         System.out.println(":\tGreen side");
         for (int i = 1; i < 11; i++) {
             System.out.print(getChar(1, i));

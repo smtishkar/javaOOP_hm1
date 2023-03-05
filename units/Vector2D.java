@@ -14,6 +14,9 @@ public class Vector2D {
         return Math.sqrt(Math.pow(posX - oponent.posX,2) + Math.pow(posY - oponent.posY,2));
     }
 
+    protected Vector2D chooseWay(Vector2D oponent){
+        return new Vector2D(posX - oponent.posX, posY - oponent.posY);
+    }
 }
 
     

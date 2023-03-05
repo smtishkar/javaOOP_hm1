@@ -34,6 +34,9 @@ public class app {
         allmembers.addAll(team1);
         allmembers.addAll(team2);
         sortTeam(allmembers);
+        boolean condition = true;
+        int countBlue = 0;
+        int countGreen = 0;
 
         System.out.println("Команда 1");
         team1.forEach(n -> System.out.println(n.getInfo()));
@@ -45,24 +48,39 @@ public class app {
         allmembers.forEach(n -> System.out.println(n.getInfo()));
         System.out.println();
 
-        String stop = "";
-        while (stop.equals("")) {
+        // String stop = "";
+        while (condition) {
             View.view();
+            user_input.nextLine();
+            countBlue = 0;
+            countGreen = 0;
             for (BaseHero human : allmembers) {
                 if (team1.contains(human)) {
                     human.step(team1, team2);
+                    countBlue++;
                 } else {
                     human.step(team2, team1);
+                    countGreen++;
+                    
                 }
+                // System.out.println(countBlue);
+                // System.out.println(countGreen);
             }
-
-
-            
-            // allmembers.forEach(n -> System.out.println(n.getInfo()));
-            stop = user_input.nextLine();
+            // if (countBlue == maxteamlenght || countGreen == maxteamlenght)
+            //     condition = false;
         }
 
+        // if (countBlue == maxteamlenght)
+        //     System.out.println("Зеленые победили");
+        // else {
+        //     System.out.println("Синие победили");
+        // }
+
+        // allmembers.forEach(n -> System.out.println(n.getInfo()));
+        // stop = user_input.nextLine();
     }
+
+    // }
 
     static void createTeam(ArrayList team, int offset, int posY) {
         for (int i = 0; i < maxteamlenght; i++) {
