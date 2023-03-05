@@ -33,8 +33,8 @@ public class View {
                     out = "|" + (AnsiColors.ANSI_RED + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
                     break;
                 }
-                if (app.team1.contains(human)) out = "|" + (AnsiColors.ANSI_GREEN + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
-                if (app.team2.contains(human)) out = "|" + (AnsiColors.ANSI_BLUE + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
+                if (app.team2.contains(human)) out = "|" + (AnsiColors.ANSI_GREEN + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
+                if (app.team1.contains(human)) out = "|" + (AnsiColors.ANSI_BLUE + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
                 break;
             }
         }
@@ -59,9 +59,9 @@ public class View {
             System.out.print(getChar(1, i));
         }
         System.out.print("|    ");
-        System.out.print(app.team2.get(0).getInfo());
-        tabSetter(app.team2.get(0).toString().length(), l[0]);
-        System.out.println(app.team1.get(0).getInfo());
+        System.out.print(app.team1.get(0).getInfo());
+        tabSetter(app.team1.get(0).toString().length(), l[0]);
+        System.out.println(app.team2.get(0).getInfo());
         System.out.println(midl10);
 
         for (int i = 2; i < 9; i++) {
@@ -69,18 +69,18 @@ public class View {
                 System.out.print(getChar(i, j));
             }
             System.out.print("|    ");
-            System.out.print(app.team2.get(i-1).getInfo());
-            tabSetter(app.team2.get(i-1).toString().length(), l[0]);
-            System.out.println(app.team1.get(i-1).getInfo());
+            System.out.print(app.team1.get(i-1).getInfo());
+            tabSetter(app.team1.get(i-1).toString().length(), l[0]);
+            System.out.println(app.team2.get(i-1).getInfo());
             System.out.println(midl10);
         }
         for (int j = 1; j < 11; j++) {
             System.out.print(getChar(10, j));
         }
         System.out.print("|    ");
-        System.out.print(app.team2.get(9).getInfo());
-        tabSetter(app.team2.get(9).toString().length(), l[0]);
-        System.out.println(app.team1.get(9).getInfo());
+        System.out.print(app.team1.get(9).getInfo());
+        tabSetter(app.team1.get(9).toString().length(), l[0]);
+        System.out.println(app.team2.get(9).getInfo());
         System.out.println(bottom10);
     }
 }

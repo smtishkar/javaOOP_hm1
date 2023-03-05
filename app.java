@@ -47,7 +47,7 @@ public class app {
 
         String stop = "";
         while (stop.equals("")) {
-            View.view();
+            // View.view();
             for (BaseHero human : allmembers) {
                 if (team1.contains(human)) {
                     human.step(team1, team2);
@@ -58,7 +58,7 @@ public class app {
 
 
             
-            // allmembers.forEach(n -> System.out.println(n.getInfo()));
+            allmembers.forEach(n -> System.out.println(n.getInfo()));
             stop = user_input.nextLine();
         }
 

@@ -16,7 +16,7 @@ public class Peasant extends Warriors {
     @Override
     public String getInfo(){         
 
-        return String.format("Крестьянин: %10s |  Speed: %3d  |  Atack:  %3d  |  HP:  %3d  |  XY  %3d -%3d  |  State:  %5s  |  ", name, speed, atack,hp, coords.posY, coords.posX, state);
+        return String.format("Крес: %7s | Sp: %2d | At: %2d | HP: %2d | XY  %2d -%2d | %3s |      ", name, speed, atack,hp, coords.posY, coords.posX, state);
 
     }
 
