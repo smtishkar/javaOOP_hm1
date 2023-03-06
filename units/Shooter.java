@@ -16,9 +16,32 @@ public abstract class Shooter extends BaseHero {
         this.damageMin = damageMin;
     }
 
+    // @Override
+    // public boolean step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
+    //     if (state.equals("Stand") && arrows > 0) {
+    //         BaseHero tareget = team2.get(findNearest(team2));
+    //         float damage = (tareget.def - atack) > 0 ? damageMin
+    //                 : (tareget.def - atack) < 0 ? damageMax : (damageMin + damageMax) / 2;
+    //         tareget.getDamage(damage);
+
+    //         for (BaseHero human : team1) {
+    //             if (human.getInfo().toString().split(":")[0].equals("Ферм") && human.state.equals("Stand")) {
+    //                 human.state = "Busy";   
+    //                 return false;
+    //             }
+    //         }
+    //         arrows--;
+    //         return false;
+            
+            
+    //     }
+    //     return true;
+    // }
+
     @Override
     public boolean step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
-        if (state.equals("Stand") && arrows > 0) {
+        if (state.equals("Stand")) {
+            if (arrows > 0) {
             BaseHero tareget = team2.get(findNearest(team2));
             float damage = (tareget.def - atack) > 0 ? damageMin
                     : (tareget.def - atack) < 0 ? damageMax : (damageMin + damageMax) / 2;
@@ -26,15 +49,17 @@ public abstract class Shooter extends BaseHero {
 
             for (BaseHero human : team1) {
                 if (human.getInfo().toString().split(":")[0].equals("Ферм") && human.state.equals("Stand")) {
-                    human.state = "Busy";
-                    
+                    human.state = "Busy";   
+                    return false;
                 }
-                return true;
             }
             arrows--;
-            
+            return false;            
+        }  
+        return false;   
         }
-        return false;
+        return true;
+    
     }
 
 }

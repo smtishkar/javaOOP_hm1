@@ -28,15 +28,30 @@ public abstract class Magician extends BaseHero {
         return index;
     }
 
+    // @Override
+    // public boolean step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
+    //     if (state.equals("Stand") && mp > 0) {
+    //         BaseHero tareget = team1.get(findIll(team1));
+    //         tareget.getDamage(damageMax);
+    //         mp--;
+    //         return false;
+    //     }
+    //     return true;
+    // }
+
     @Override
     public boolean step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
-        if (state.equals("Stand") && mp > 0) {
+        if (state.equals("Stand")) {
+            if (mp > 0) {
             BaseHero tareget = team1.get(findIll(team1));
             tareget.getDamage(damageMax);
             mp--;
-            return false;
+            
+        }
+        return false;
         }
         return true;
     }
+    
     
 }

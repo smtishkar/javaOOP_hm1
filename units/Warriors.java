@@ -27,7 +27,9 @@ public abstract class Warriors extends BaseHero {
             float damage = (tareget.def - atack) > 0 ? damageMin
                     : (tareget.def - atack) < 0 ? damageMax : (damageMin + damageMax) / 2;
             tareget.getDamage(damage);
-        } else {
+            
+        } 
+        else {
             Vector2D temptar = coords.chooseWay(tareget.coords);
             if (Math.abs(temptar.posX) < Math.abs(temptar.posY)) {
                 if (coords.chooseWay(tareget.coords).posY > 0) {

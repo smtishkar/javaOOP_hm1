@@ -48,7 +48,6 @@ public class app {
         allmembers.forEach(n -> System.out.println(n.getInfo()));
         System.out.println();
 
-        // String stop = "";
         while (condition) {
             View.view();
             user_input.nextLine();
@@ -56,31 +55,29 @@ public class app {
             countGreen = 0;
             for (BaseHero human : allmembers) {
                 if (team1.contains(human)) {
-                    human.step(team1, team2);
-                    countBlue++;
+                    if (human.step(team1, team2) == true) {
+                        countBlue++;
+                    }
                 } else {
-                    human.step(team2, team1);
-                    countGreen++;
-                    
+                    if (human.step(team2, team1) == true) {
+                        countGreen++;
+                    }
                 }
-                // System.out.println(countBlue);
-                // System.out.println(countGreen);
+
             }
-            // if (countBlue == maxteamlenght || countGreen == maxteamlenght)
-            //     condition = false;
+            System.out.println(countBlue);
+            System.out.println(countGreen);
+            if (countBlue == maxteamlenght || countGreen == maxteamlenght)
+                condition = false;
         }
 
-        // if (countBlue == maxteamlenght)
-        //     System.out.println("Зеленые победили");
-        // else {
-        //     System.out.println("Синие победили");
-        // }
+        if (countBlue == maxteamlenght)
+            System.out.println("Зеленые победили");
+        else {
+            System.out.println("Синие победили");
+        }
 
-        // allmembers.forEach(n -> System.out.println(n.getInfo()));
-        // stop = user_input.nextLine();
     }
-
-    // }
 
     static void createTeam(ArrayList team, int offset, int posY) {
         for (int i = 0; i < maxteamlenght; i++) {

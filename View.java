@@ -51,36 +51,75 @@ public class View {
         System.out.print("_".repeat(l[0]*6));
         System.out.println("");
         System.out.print(top10 + "    ");
-        System.out.print("Blue side");
+        // System.out.print("Blue side");
+        System.out.print(AnsiColors.ANSI_BLUE + "Blue side" + AnsiColors.ANSI_RESET);
         //for (int i = 0; i < l[0]-9; i++)
         System.out.print("    ".repeat(l[0]-9));
-        System.out.println(":\tGreen side");
+        System.out.println(AnsiColors.ANSI_GREEN + ":\tGreen side" + AnsiColors.ANSI_RESET);
         for (int i = 1; i < 11; i++) {
             System.out.print(getChar(1, i));
         }
         System.out.print("|    ");
+        
+        if (app.team1.get(0).getHp()!=0){
         System.out.print(app.team1.get(0).getInfo());
+        }
+        else {
+            System.out.print(AnsiColors.ANSI_RED + app.team1.get(0).getInfo() + AnsiColors.ANSI_RESET);
+        }
+        // System.out.print(app.team1.get(0).getInfo());
+
         tabSetter(app.team1.get(0).toString().length(), l[0]);
-        System.out.println(app.team2.get(0).getInfo());
+        if (app.team2.get(0).getHp()!=0){
+            System.out.println(app.team2.get(0).getInfo());
+            }
+            else {
+                System.out.println(AnsiColors.ANSI_RED + app.team2.get(0).getInfo() + AnsiColors.ANSI_RESET);
+            }
+        // System.out.println(app.team2.get(0).getInfo());
         System.out.println(midl10);
 
-        for (int i = 2; i < 9; i++) {
+        for (int i = 2; i <10; i++) {
             for (int j = 1; j < 11; j++) {
                 System.out.print(getChar(i, j));
             }
             System.out.print("|    ");
-            System.out.print(app.team1.get(i-1).getInfo());
+            if (app.team1.get(i-1).getHp()!=0){
+                System.out.print(app.team1.get(i-1).getInfo());
+                }
+                else {
+                    System.out.print(AnsiColors.ANSI_RED + app.team1.get(i-1).getInfo() + AnsiColors.ANSI_RESET);
+                }
+            // System.out.print(app.team1.get(i-1).getInfo());
             tabSetter(app.team1.get(i-1).toString().length(), l[0]);
-            System.out.println(app.team2.get(i-1).getInfo());
+            if (app.team2.get(i-1).getHp()!=0){
+                System.out.println(app.team2.get(i-1).getInfo());
+                }
+                else {
+                    System.out.println(AnsiColors.ANSI_RED + app.team2.get(i-1).getInfo() + AnsiColors.ANSI_RESET);
+                }
+            // System.out.println(app.team2.get(i-1).getInfo());
             System.out.println(midl10);
         }
         for (int j = 1; j < 11; j++) {
             System.out.print(getChar(10, j));
         }
         System.out.print("|    ");
-        System.out.print(app.team1.get(9).getInfo());
+        if (app.team1.get(9).getHp()!=0){
+            System.out.print(app.team1.get(9).getInfo());
+            }
+            else {
+                System.out.print(AnsiColors.ANSI_RED + app.team1.get(9).getInfo() + AnsiColors.ANSI_RESET);
+            }
+        // System.out.print(app.team1.get(9).getInfo());
         tabSetter(app.team1.get(9).toString().length(), l[0]);
-        System.out.println(app.team2.get(9).getInfo());
+        if (app.team2.get(9).getHp()!=0){
+            System.out.println(app.team2.get(9).getInfo());
+            }
+            else {
+                System.out.println(AnsiColors.ANSI_RED + app.team2.get(9).getInfo() + AnsiColors.ANSI_RESET);
+            }
+        // System.out.println(app.team2.get(9).getInfo());
         System.out.println(bottom10);
     }
 }
