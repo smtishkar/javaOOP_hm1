@@ -1,18 +1,25 @@
 import units.BaseHero;
 
-
 import java.util.Collections;
 
 public class View {
     private static int step = 1;
-    private static final int[] l = {0};
-    private static final String top10 = formatDiv("a") + String.join("", Collections.nCopies(9, formatDiv("-b"))) + formatDiv("-c");
-    private static final String midl10 = formatDiv("d") + String.join("", Collections.nCopies(9, formatDiv("-e"))) + formatDiv("-f");
-    private static final String bottom10 = formatDiv("g") + String.join("", Collections.nCopies(9, formatDiv("-h"))) + formatDiv("-i");
-    private static void tabSetter(int cnt, int max){
+    private static final int[] l = { 0 };
+    private static final String top10 = formatDiv("a") + String.join("", Collections.nCopies(9, formatDiv("-b")))
+            + formatDiv("-c");
+    private static final String midl10 = formatDiv("d") + String.join("", Collections.nCopies(9, formatDiv("-e")))
+            + formatDiv("-f");
+    private static final String bottom10 = formatDiv("g") + String.join("", Collections.nCopies(9, formatDiv("-h")))
+            + formatDiv("-i");
+
+    private static void tabSetter(int cnt, int max) {
         int dif = max - cnt + 2;
-        if (dif>0) System.out.printf("%" + dif + "s", ":\t"); else System.out.print(":\t");
+        if (dif > 0)
+            System.out.printf("%" + dif + "s", ":\t");
+        else
+            System.out.print(":\t");
     }
+
     private static String formatDiv(String str) {
         return str.replace('a', '\u250c')
                 .replace('b', '\u252c')
@@ -25,79 +32,79 @@ public class View {
                 .replace('i', '\u2518')
                 .replace('-', '\u2500');
     }
-    private static String getChar(int x, int y){
+
+    private static String getChar(int x, int y) {
         String out = "| ";
-        for (BaseHero human: app.allmembers) {
-            if (human.getCoords()[0] == x && human.getCoords()[1] == y){
+        for (BaseHero human : app.allmembers) {
+            if (human.getCoords()[0] == x && human.getCoords()[1] == y) {
                 if (human.getHp() == 0) {
                     out = "|" + (AnsiColors.ANSI_RED + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
                     break;
                 }
-                if (app.team2.contains(human)) out = "|" + (AnsiColors.ANSI_GREEN + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
-                if (app.team1.contains(human)) out = "|" + (AnsiColors.ANSI_BLUE + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
+                if (app.team2.contains(human))
+                    out = "|" + (AnsiColors.ANSI_GREEN + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
+                if (app.team1.contains(human))
+                    out = "|" + (AnsiColors.ANSI_BLUE + human.getInfo().charAt(0) + AnsiColors.ANSI_RESET);
                 break;
             }
         }
         return out;
     }
+
     public static void view() {
-        if (step == 1 ){
+        if (step == 1) {
             System.out.print(AnsiColors.ANSI_RED + "First step" + AnsiColors.ANSI_RESET);
         } else {
             System.out.print(AnsiColors.ANSI_RED + "Step:" + step + AnsiColors.ANSI_RESET);
         }
         step++;
         app.allmembers.forEach((v) -> l[0] = Math.max(l[0], v.toString().length()));
-        System.out.print("_".repeat(l[0]*6));
+        System.out.print("_".repeat(l[0] * 6));
         System.out.println("");
         System.out.print(top10 + "    ");
         // System.out.print("Blue side");
         System.out.print(AnsiColors.ANSI_BLUE + "Blue side" + AnsiColors.ANSI_RESET);
-        //for (int i = 0; i < l[0]-9; i++)
-        System.out.print("    ".repeat(l[0]-9));
+        // for (int i = 0; i < l[0]-9; i++)
+        System.out.print("    ".repeat(l[0] - 9));
         System.out.println(AnsiColors.ANSI_GREEN + ":\tGreen side" + AnsiColors.ANSI_RESET);
         for (int i = 1; i < 11; i++) {
             System.out.print(getChar(1, i));
         }
         System.out.print("|    ");
-        
-        if (app.team1.get(0).getHp()!=0){
-        System.out.print(app.team1.get(0).getInfo());
-        }
-        else {
+
+        if (app.team1.get(0).getHp() != 0) {
+            System.out.print(app.team1.get(0).getInfo());
+        } else {
             System.out.print(AnsiColors.ANSI_RED + app.team1.get(0).getInfo() + AnsiColors.ANSI_RESET);
         }
         // System.out.print(app.team1.get(0).getInfo());
 
         tabSetter(app.team1.get(0).toString().length(), l[0]);
-        if (app.team2.get(0).getHp()!=0){
+        if (app.team2.get(0).getHp() != 0) {
             System.out.println(app.team2.get(0).getInfo());
-            }
-            else {
-                System.out.println(AnsiColors.ANSI_RED + app.team2.get(0).getInfo() + AnsiColors.ANSI_RESET);
-            }
+        } else {
+            System.out.println(AnsiColors.ANSI_RED + app.team2.get(0).getInfo() + AnsiColors.ANSI_RESET);
+        }
         // System.out.println(app.team2.get(0).getInfo());
         System.out.println(midl10);
 
-        for (int i = 2; i <10; i++) {
+        for (int i = 2; i < 10; i++) {
             for (int j = 1; j < 11; j++) {
                 System.out.print(getChar(i, j));
             }
             System.out.print("|    ");
-            if (app.team1.get(i-1).getHp()!=0){
-                System.out.print(app.team1.get(i-1).getInfo());
-                }
-                else {
-                    System.out.print(AnsiColors.ANSI_RED + app.team1.get(i-1).getInfo() + AnsiColors.ANSI_RESET);
-                }
+            if (app.team1.get(i - 1).getHp() != 0) {
+                System.out.print(app.team1.get(i - 1).getInfo());
+            } else {
+                System.out.print(AnsiColors.ANSI_RED + app.team1.get(i - 1).getInfo() + AnsiColors.ANSI_RESET);
+            }
             // System.out.print(app.team1.get(i-1).getInfo());
-            tabSetter(app.team1.get(i-1).toString().length(), l[0]);
-            if (app.team2.get(i-1).getHp()!=0){
-                System.out.println(app.team2.get(i-1).getInfo());
-                }
-                else {
-                    System.out.println(AnsiColors.ANSI_RED + app.team2.get(i-1).getInfo() + AnsiColors.ANSI_RESET);
-                }
+            tabSetter(app.team1.get(i - 1).toString().length(), l[0]);
+            if (app.team2.get(i - 1).getHp() != 0) {
+                System.out.println(app.team2.get(i - 1).getInfo());
+            } else {
+                System.out.println(AnsiColors.ANSI_RED + app.team2.get(i - 1).getInfo() + AnsiColors.ANSI_RESET);
+            }
             // System.out.println(app.team2.get(i-1).getInfo());
             System.out.println(midl10);
         }
@@ -105,20 +112,18 @@ public class View {
             System.out.print(getChar(10, j));
         }
         System.out.print("|    ");
-        if (app.team1.get(9).getHp()!=0){
+        if (app.team1.get(9).getHp() != 0) {
             System.out.print(app.team1.get(9).getInfo());
-            }
-            else {
-                System.out.print(AnsiColors.ANSI_RED + app.team1.get(9).getInfo() + AnsiColors.ANSI_RESET);
-            }
+        } else {
+            System.out.print(AnsiColors.ANSI_RED + app.team1.get(9).getInfo() + AnsiColors.ANSI_RESET);
+        }
         // System.out.print(app.team1.get(9).getInfo());
         tabSetter(app.team1.get(9).toString().length(), l[0]);
-        if (app.team2.get(9).getHp()!=0){
+        if (app.team2.get(9).getHp() != 0) {
             System.out.println(app.team2.get(9).getInfo());
-            }
-            else {
-                System.out.println(AnsiColors.ANSI_RED + app.team2.get(9).getInfo() + AnsiColors.ANSI_RESET);
-            }
+        } else {
+            System.out.println(AnsiColors.ANSI_RED + app.team2.get(9).getInfo() + AnsiColors.ANSI_RESET);
+        }
         // System.out.println(app.team2.get(9).getInfo());
         System.out.println(bottom10);
     }

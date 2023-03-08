@@ -20,7 +20,7 @@ public class AnsiColors {
 
     public static final String ANSI_CLEAR_SCREEN = "\033[H";
 
-    public static void clear(){
+    public static void clear() {
         System.out.println(ANSI_CLEAR_SCREEN);
     }
 }

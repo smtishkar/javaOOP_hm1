@@ -22,7 +22,7 @@ public abstract class BaseHero implements InGameInterface {
 
     @Override
     public boolean step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
-return true;
+        return true;
     }
 
     @Override
@@ -30,10 +30,9 @@ return true;
         return "null";
     }
 
-    public int[] getCoords() {return new int[]{coords.posX, coords.posY};}
-    
-    // public void step(ArrayList<BaseHero> team1, ArrayList<BaseHero> team2) {
-    // }
+    public int[] getCoords() {
+        return new int[] { coords.posX, coords.posY };
+    }
 
     public int findNearest(ArrayList<BaseHero> team) {
         double min = Double.MAX_VALUE;
